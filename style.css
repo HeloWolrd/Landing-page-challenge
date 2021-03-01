@@ -1,0 +1,380 @@
+* {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Public Sans', sans-serif;
+    line-height: 1.3;
+
+}
+
+a {
+    color: hsl(0, 0%, 61%);
+    font-size: 19px;
+    font-weight: 450;
+  }
+  
+  /* header */
+  
+  .header {
+    background-color: #fff;
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+  }
+  
+  .header ul {
+    margin: 0;
+    padding-right:600px;
+    list-style: none;
+    overflow: hidden;
+    background-color: #fff;
+
+    
+  }
+  
+  .header li a {
+    display: block;
+    padding: 20px 20px;
+    text-decoration: none;
+  }
+  
+  .header li a:hover,
+  .header .menu-btn:hover {
+    color: hsl(136, 65%, 51%);
+  }
+  
+.logo {
+    padding-top: 20px;
+    padding-left: 20px;
+    width:195px ;
+    height:50px ;
+  }
+  
+  /* menu */
+  
+  .header .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+  }
+
+  /*button*/  
+button{ 
+    
+      color: hsl(0, 0%, 61%);
+      font-size: 19px;
+      font-weight: 450;
+      margin: 10px;
+      padding: 15px 45px;
+      text-align: center;
+      transition: 0.5s;
+      background-size: 200% auto;
+      color: white;            
+      border-radius:30px;
+      display: block;
+      border:none;
+      background-image: linear-gradient(to right, #77A1D3 0%, #79cba9  51%, #36e995  100%);
+    }
+
+  button:hover {
+    background-position: right center; /* change the direction of the change here */
+    text-decoration: none;
+  }
+  /* menu icon */
+  
+  .header .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+  }
+  
+  .header .menu-icon .navicon {
+    background: #333;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+  }
+  
+  .header .menu-icon .navicon:before,
+  .header .menu-icon .navicon:after {
+    background: #333;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+  }
+  
+  .header .menu-icon .navicon:before {
+    top: 5px;
+  }
+  
+  .header .menu-icon .navicon:after {
+    top: -5px;
+  }
+  
+  /* menu btn */
+  
+  .header .menu-btn {
+    display: none;
+  }
+  
+  .header .menu-btn:checked ~ .menu {
+    max-height: 240px;
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+  }
+  
+  /* 48em = 768px */
+  
+  @media (min-width: 48em) {
+    .header li {
+      float: left;
+    }
+    .header li a {
+      padding: 20px 30px;
+    }
+    .header .menu {
+      clear: none;
+      float: right;
+      max-height: none;
+    }
+    .header .menu-icon {
+      display: none;
+    }
+  }
+
+/*text and image*/
+.container{
+  /*position text over an image*/
+  /* Container holding the image and the text */
+  position: relative;
+  text-align: center;
+}
+img{
+  max-width: 100%;
+}
+.container > div{
+  flex-basis: 50% ;
+}
+
+.background{
+    padding-left:40%;
+    padding-bottom:80%;
+}
+/*How to Position Image Over Image using CSS vvvvv*/
+/*https://www.codexworld.com/how-to/position-place-image-over-image-css/*/
+
+.over-img{
+  position: absolute;
+  top: 10px;
+  left: 50%;
+}
+.text-col{
+  padding-top: 0px;
+  padding-left: 100px;
+/* Position text top left over the image */
+  position: absolute;
+  top: 200px;
+  left: 16px;
+  background-color: rgba(255, 255, 255, 0.596);
+}  
+h1{
+  font-family: 'Public Sans', sans-serif;
+  color: hsl(233, 26%, 24%);
+  font-size: 60px;
+  font-weight: 500;
+}
+p{
+  font-family: 'Public Sans', sans-serif;
+  color: hsl(0, 0%, 38%);
+  font-size: 22px;
+}
+.text-icon-legend{
+  padding-left: 100px;
+/* Position text top left over the image */
+  position: absolute;
+  top:900px;
+  background-color: hsl(220, 16%, 96%);
+} 
+.cards-section{
+  background-color: hsl(0, 0%, 100%);
+}
+h2 , h4{
+  font-family: 'Public Sans', sans-serif;
+  color: hsl(0, 0%, 11%);
+  font-size: 40px;
+  font-weight: 500;
+
+}
+h3{
+  color: hsl(0, 0%, 11%);
+  font-size:30px;
+  font-weight: 500;
+}
+/*Responsive Column Cards*/
+/*https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_column_cards*/
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 700px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  text-align: left;
+}
+/*----------------FOOTER-------------*/
+
+.footer {
+  background-color: #4a8eb6;
+  color: white;
+  padding: 2.5rem;
+  text-align: center;
+}
+
+@media (min-width: 64em) {
+  .footer .container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 2fr 1fr 1fr 3fr;
+        grid-template-columns: 2fr 1fr 1fr 3fr;
+    -ms-grid-rows: 1fr auto;
+        grid-template-rows: 1fr auto;
+        grid-template-areas: "logo links1 links2 cta" "social links1 links2 copyright";
+    gap: 1rem;
+    justify-items: start;
+  }
+}
+
+.footer a {
+  color: white;
+}
+
+.footer__logo {
+  display: inline-block;
+}
+
+@media (max-width: 63.9375em) {
+  .footer__logo {
+    margin-bottom: 1.875rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .footer__logo {
+    grid-area: logo;
+  }
+}
+
+@media (max-width: 63.9375em) {
+  .footer__social {
+    margin-bottom: 1.875rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .footer__social {
+    grid-area: social;
+    -ms-flex-item-align: end;
+        -ms-grid-row-align: end;
+        align-self: end;
+  }
+}
+
+.footer__social a {
+  display: inline-block;
+  height: 1.25rem;
+}
+
+.footer__social a svg path {
+  -webkit-transition: fill 150ms ease-in-out;
+  transition: fill 150ms ease-in-out;
+}
+
+.footer__social a:hover svg path {
+  fill: #31d35c;
+}
+
+.footer__social a:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.footer__links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 0.9375rem;
+}
+
+
+
+
+.footer__links a {
+  line-height: 2.25;
+  -webkit-transition: color 150ms ease-in-out;
+  transition: color 150ms ease-in-out;
+}
+
+.footer__links a:hover {
+  color: #31d35c;
+}
+.footer__copyright {
+  font-size: 0.8125rem;
+  color: #9698a6;
+}
+
+
+
